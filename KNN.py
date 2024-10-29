@@ -1,7 +1,7 @@
 import numpy as np 
 from collections import Counter
 
-def ecludian_distance(x1,x2):
+def euclidean_distance(x1,x2):
     distance = np.sqrt(np.sum((x1-x2) **2))
     return distance
 
@@ -19,7 +19,7 @@ class KNN():
 
     def _predict(self,x):
         # compute the distance
-        distances = [ecludian_distance(x,x_train) for x_train in self.X_train]
+        distances = [euclidean_distance(x,x_train) for x_train in self.X_train]
 
         # get the closest k
         k_indices = np.argsort(distances)[:self.k]
